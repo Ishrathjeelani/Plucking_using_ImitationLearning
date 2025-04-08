@@ -1,0 +1,51 @@
+# Device config for computation
+devices:
+  device: "cpu"
+
+robot_arm:
+  xarm_ip: "192.168.1.199"  # Fill in IP adress of xArm
+  xarm_weight: 1.091  # Fill in the payload weight of xArm
+  xarm_tcp: [-9.72, 18.38, 157.69]  # Fill in the TCP of xArm
+
+
+# control params
+control:
+  control_freq: 20
+  hand_target_peace:
+    [0, 0, 0, 0,  # index
+     0, 0, 0, 0,  # middle
+     0.2, 1, 1.2, 1.2,  # ring
+     0.4, 1, 1.2, 1.2]  # thumb
+  hand_lower:
+    [-0.594, -0.274, -0.274, -0.327,
+     -0.594, -0.274, -0.274, -0.327,
+     -0.594, -0.274, -0.274, -0.327,
+     0.363, -0.205, -0.289, -0.262]
+  hand_upper:
+    [0.571, 1.736, 1.809, 1.718,
+     0.571, 1.736, 1.809, 1.718,
+     0.571, 1.736, 1.809, 1.718,
+     1.496, 1.263, 1.744, 1.819]
+  hand_lower_torq:
+    [-0.5, -0.5, -0.5, -0.5,
+     -0.5, -0.5, -0.5, -0.5,
+     -0.5, -0.5, -0.5, -0.5,
+     -0.5, -0.5, -0.5, -0.5]
+  hand_upper_torq:
+    [0.5, 0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5, 0.5,
+     0.5, 0.5, 0.5, 0.5]
+  arm_and_hand: True # True here refers to hand and arm and False for hand only.
+
+  # [index, middle, annulary, thumb]
+  glove_min_position: [700, 1326, 1364, 100] 
+  #[2089.0, 2544.0, 1145.0, 2277.0,]
+  glove_max_position: [1420, 2602, 2890, 384] 
+  #[2942.0, 3339.0, 2199.0, 4095.0]
+
+  # hand_lower:
+  #   [-0.594, -0.296, -0.274, -0.327,
+  #    -0.594, -0.296, -0.274, -0.327,
+  #    -0.594, -0.296, -0.274, -0.327,
+  #    0.363, -0.205, -0.289, -0.262]
