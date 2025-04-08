@@ -1,0 +1,37 @@
+<launch>
+    <!-- Launch the third camera publisher (camera 3) -->
+    <!-- <node pkg="plucking_nodes" type="yolo.py" name="YOLO_camera_node" output="screen">
+        <param name="yoloColor_topic" value="/yolo/color_image" />
+        <param name="yoloDepth_topic" value="/yolo/depth_image" />
+        <param name="device" value="/dev/camera_eof" />
+        <param name="width" value="640" />
+        <param name="height" value="480" />
+        <param name="fps" value="15" />
+    </node> -->
+    <node pkg="plucking_nodes" type="digitPublisher.py" name="Digit_node" output="screen">
+        <param name="cameraThumb_topic" value="/DigitThumb/color_image" />
+        <param name="cameraMiddle_topic" value="/DigitMiddle/color_image" /> 
+        <param name="cameraIndex_topic" value="/DigitIndex/color_image" />
+        <param name="cameraRing_topic" value="/DigitRing/color_image" /> 
+    </node>
+    <node pkg="plucking_nodes" type="worldCameraPublisher.py" name="world_camera_node" output="screen">
+        <param name="cameraWorldColor_topic" value="/cameraWorld/color_image" />
+        <param name="cameraWorldDepth_topic" value="/cameraWorld/depth_image" />
+        <param name="device" value="/dev/camera_eof" />
+        <param name="width" value="640" />
+        <param name="height" value="480" />
+        <param name="fps" value="15" />
+    </node>
+    <node pkg="plucking_nodes" type="EOFCameraPublisher.py" name="EOF_camera_node" output="screen">
+        <param name="cameraEOFColor_topic" value="/cameraEOF/color_image" />
+        <param name="cameraEOFDepth_topic" value="/cameraEOF/depth_image" />
+        <param name="device" value="/dev/camera_eof" />
+        <param name="width" value="640" />
+        <param name="height" value="480" />
+        <param name="fps" value="15" />
+    </node>
+    <!-- <node pkg="plucking_nodes" type="glovePublisher.py" name="Glove_node" output="screen">
+        <param name="glove_topic" value="/glove/RawData" /> 
+    </node>-->
+</launch>
+
